@@ -69,12 +69,6 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
     glidepoint_listener {
         compatible = "zmk,input-listener";
         device = <&glidepoint>;
-
-        xy-swap;
-        y-invert;
-        x-invert;
-        scale-multiplier = <1>;
-        scale-divisor = <1>;
     };
 };
 
@@ -105,7 +99,9 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
         dr-gpios = <&gpio1 1 (GPIO_ACTIVE_HIGH)>;
 
         sensitivity = "4x";
-        // sleep;
         no-taps;
+        rotate-90;
+        x-invert;
+        y-invert;
     };
 };
