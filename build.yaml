@@ -20,6 +20,6 @@
 ---
 include:
   - board: puchi_ble_v1
-    shield: sofle_gp_left
+    shield: sofle_t_left
   - board: puchi_ble_v1
-    shield: sofle_gp_right
+    shield: sofle_t_right
