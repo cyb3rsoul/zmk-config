@@ -20,8 +20,3 @@
 &left_encoder {
     status = "okay";
 };
-
-// Disable OLED temporarily to debug device name length issue
-// &oled {
-//     status = "okay";
-// };
