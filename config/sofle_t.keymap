@@ -9,11 +9,21 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/mouse.h>
+#include <behaviors/mouse_keys.dtsi>
 
 #define BASE 0
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
+#define MOUSE 4
+
+// Configure trackpad scrolling behavior
+&msc {
+    acceleration-exponent = <0>;      // No acceleration for linear scrolling
+    time-to-max-speed-ms = <0>;       // Instant max speed
+    delay-ms = <0>;                   // No delay before scrolling
+};
 
 / {
 
