@@ -65,6 +65,14 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
         triggers-per-rotation = <20>;
     };
 
+    glidepoint_listener {
+        compatible = "zmk,input-listener";
+        device = <&glidepoint>;
+        
+        rotate-90;
+        x-invert;
+        y-invert;
+    };
 };
 
 &pro_micro_i2c {
@@ -78,17 +86,4 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
         sensitivity = "4x";
         no-taps;
     };
-};:w
-
-   / {
-      glidepoint_listener {
-        compatible = "zmk,input-listener";
-        device = <&glidepoint>;
-
-	rotate-90;
-        x-invert;
-        y-invert;
-
-    };
-   };
-
+};
