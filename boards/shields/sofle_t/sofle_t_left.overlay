@@ -21,7 +21,7 @@
     status = "okay";
 };
 
-// Enable OLED display on left side only
-&oled {
-    status = "okay";
-};
+// Disable OLED temporarily to debug device name length issue
+// &oled {
+//     status = "okay";
+// };
