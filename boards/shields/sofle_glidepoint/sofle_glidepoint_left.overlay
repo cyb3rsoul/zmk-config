@@ -21,4 +21,7 @@
     status = "okay";
 };
 
-// Glidepoint listener is already enabled in dtsi for split communication
+// Enable OLED display on left side only
+&oled {
+    status = "okay";
+};
