@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "sofle_glidepoint.dtsi"
+#include "sofle_gp.dtsi"
 
 &kscan0 {
     col-gpios
