@@ -1,10 +1,10 @@
 # Copyright (c) 2020 Ryan Cross
 # SPDX-License-Identifier: MIT
 
-if SHIELD_SOFLE_T_RIGHT
+if SHIELD_SOFLE_T_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "Sofle"
+    default "S"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
