@@ -1,0 +1,21 @@
+/*
+ * Pin override for damaged P1.06 pin
+ * P1.06 (Pin 9) is shorted and affecting both Row 4 and Column 5
+ * Remap Row 4: P1.06 (D9) -> P0.08 (D0) 
+ * Remap Column 5: P1.11 (D10) -> P0.06 (D1)
+ */
+
+&kscan0 {
+    row-gpios = <&gpio0 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D5 - Row 0
+                <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D6 - Row 1  
+                <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D7 - Row 2
+                <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,  // D8 - Row 3
+                <&gpio0 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;  // D0 - Row 4 (was D9/P1.06)
+    
+    col-gpios = <&gpio0 29 GPIO_ACTIVE_HIGH>,  // A1 - Col 0 (was D19)
+                <&gpio0 2  GPIO_ACTIVE_HIGH>,  // A0 - Col 1 (was D18)  
+                <&gpio1 13 GPIO_ACTIVE_HIGH>,  // D15 - Col 2
+                <&gpio0 3  GPIO_ACTIVE_HIGH>,  // D14 - Col 3
+                <&gpio0 28 GPIO_ACTIVE_HIGH>,  // D16 - Col 4
+                <&gpio0 6  GPIO_ACTIVE_HIGH>;  // D1 - Col 5 (was D10/P1.11)
+};
