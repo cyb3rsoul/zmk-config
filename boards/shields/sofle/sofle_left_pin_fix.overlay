@@ -1,18 +1,21 @@
-/*
- * Pin override for damaged P1.06/P1.11 pins from ESD event
- * Remap damaged pins to unused OLED pins
- */
+// Pin fix for damaged P1.06 and P1.11 
+// Row 4: pin 9 (P1.06) -> pin 0 (P0.08)
+// Col 5: pin 10 (P1.11) -> pin 1 (P0.06)
 
-&pro_micro {
-    gpio-map = <5 0 &gpio0 13 0>,   // D5 - Row 0
-               <6 0 &gpio0 24 0>,   // D6 - Row 1
-               <7 0 &gpio0 9 0>,    // D7 - Row 2  
-               <8 0 &gpio0 10 0>,   // D8 - Row 3
-               <9 0 &gpio0 8 0>,    // D9 -> D0 (Row 4, was P1.06)
-               <10 0 &gpio0 6 0>,   // D10 -> D1 (Col 5, was P1.11)
-               <14 0 &gpio0 3 0>,   // D14 - Col 3
-               <15 0 &gpio1 13 0>,  // D15 - Col 2
-               <16 0 &gpio0 28 0>,  // D16 - Col 4
-               <18 0 &gpio0 2 0>,   // D18 - Col 1
-               <19 0 &gpio0 29 0>;  // D19 - Col 0
+&kscan0 {
+    row-gpios
+        = <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        ;
+    col-gpios
+        = <&pro_micro 19 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 18 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 15 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 14 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 16 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 1 GPIO_ACTIVE_HIGH>
+        ;
 };
