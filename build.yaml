@@ -21,9 +21,9 @@
 include:
   - board: puchi_ble_v1
     shield: sofle_left
-    cmake-args: -DDTC_OVERLAY_FILE="boards/shields/sofle/sofle_left_pin_fix.overlay"
+    cmake-args: -DDTC_OVERLAY_FILE="${GITHUB_WORKSPACE}/boards/shields/sofle/sofle_left_pin_fix.overlay"
   - board: puchi_ble_v1
     shield: sofle_right
-    cmake-args: -DDTC_OVERLAY_FILE="boards/shields/sofle/sofle_left_pin_fix.overlay"
+    cmake-args: -DDTC_OVERLAY_FILE="${GITHUB_WORKSPACE}/boards/shields/sofle/sofle_left_pin_fix.overlay"
   - board: puchi_ble_v1
     shield: settings_reset
